@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Virtual Staff</title>
+</head>
+    <div class="navbardiv">
+    <img src="keyboard_notes.png" alt="piano" width="150px" id="mainimage">
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" id="vpiano" href="piano.html"> Virtual Piano</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="vstaff" href="staff.html">Virtual Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="harmony" href="harmony.html">Harmony</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="mhistory" href="quiz.html">Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pnotation" href="pitch.html">Pitch & Notation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="about" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="settings">Settings</button> 
+                </li>
+            </ul>
+    </nav>
+		</div>
+			    <img id='chordimage' src="staff/Cmaj.png">
+                </div>
+    <div class="container">
+        <div class="row">
+            <div class="chords">
+                <h3>Chords:</h3>
+                <button class="btn" id="major">Major</button>
+                <button class="btn" id="minor">Minor</button>
+                <button class="btn" id="major7">Major 7</button>
+                <button class="btn" id="minor7">Minor 7</button>
+                <button class="btn" id="dom7">Dominant 7</button>
+                <button class="btn" id="dim7">Diminished 7</button>
+                <button class="btn" id="aug">Augmented</button>
+                <button class="btn" id="dim">Diminished</button>
+                <button class="btn" id="halfdim">Half Diminished</button>
+            </div>
+            <div class="keys">
+                <h3>Keys:</h3>
+                <button class="btn" id="c">C</button>
+                <button class="btn" id="csharp">C#</button>
+                <button class="btn" id="d">D</button>
+                <button class="btn" id="dsharp">D#</button>
+                <button class="btn" id="e">E</button>
+                <button class="btn" id="f">F</button>
+                <button class="btn" id="fsharp">F#</button>
+                <button class="btn" id="g">G</button>
+                <button class="btn" id="gsharp">G#</button>
+                <button class="btn" id="a">A</button>
+                <button class="btn" id="asharp">A#</button>
+                <button class="btn" id="b">B</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    document.getElementById("major").onclick = function() {
+        document.getElementById("chordimage").src = "staff/Cmaj.png";
+    };
+    document.getElementById("minor").onclick = function() {
+        document.getElementById("chordimage").src = "staff/Cmin.png";
+    };
+    document.getElementById("major7").onclick = function() {
+        document.getElementById("chordimage").src = "staff/Cmaj7.png";
+    };
+    document.getElementById("minor7").onclick = function() {
+        document.getElementById("chordimage").src = "staff/Cmin7.png";
+    };
+    document.getElementById("dom7").onclick = function() {
+        document.getElementById("chordimage").src = "staff/Cdom7.png";
+    };
+    document.getElementById("dim7").onclick = function() {
+        document.getElementById("chordimage").src = "staff/Cdim7.png";
+    };
+    document.getElementById("aug").onclick = function() {
+        document.getElementById("chordimage").src = "staff/Caug.png";
+    };
+    document.getElementById("dim").onclick = function() {
+        document.getElementById("chordimage").src = "staff/Cdim.png";
+    };
+    document.getElementById("halfdim").onclick = function() {
+        document.getElementById("chordimage").src = "staff/Chalfdim.png";
+    };
+
+</script>
+
+        <style>
+            .chords {
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+            /* put container on the right of the navbar */
+            .keys {
+                float: right;
+                margin-right: 10px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .chords {
+                float: left;
+                margin-right: 10px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .container {
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 300px;
+                height: 300px;
+                background-color: #f1f1f1;
+                padding: 20px;
+            }
+            /* Style divs with class pianodiv and navbardiv in a grid next to eachother */
+            .pianoTitle {
+                text-align: left;
+                font-size: 30px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                color: #003366;
+            }
+            .pianodiv {
+                display: inline-block;
+                vertical-align: top;
+                margin: 10px;
+                padding: 10px;
+                padding-left: 50px;
+            }
+            .navbardiv {
+                display: inline-block;
+                vertical-align: top;
+                margin: 10px;
+                padding-right: 10px;
+                width: 200px;
+                height: 300px;
+            }
+            .nav-item {
+                list-style-type: none;
+            }
+            #settingsPanel {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #f1f1f1;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            display: none;
+        }
+        /* Remove the indent from the list elements */
+        .nav-item .navbar-nav{
+            margin-left: 0;
+            padding-left: 0;
+        }
+        /* Got rid of unecessary UL indents */
+        ul {
+            padding: 0;
+            list-style-type: none; 
+        }
+        /* Here I increase the vertical padding between nav-link elements */
+        .nav-item .nav-link {
+            padding: .5rem 1rem;
+            text-decoration: none;
+            display: block;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .nav-link {
+            color: black;
+        }
+        .nav-link:hover {
+            color: #ffc107;
+        }
+        #settings::before {
+            content: url("settings.png");
+        }
+        #settings {
+            /* remove button background */
+            background-color: transparent;
+            border: transparent;
+        }
+        #about::before {
+            content: url("about.png");
+        }
+        #pnotation::before {
+            content: url("pitch.jpg");
+        }
+        #mhistory::before {
+            content: url("mhistory.png");
+        }
+        #harmony::before {
+            content: url("harmony.png");
+        }
+        #vstaff::before {
+            content: url("hi.png");
+        }
+        #vstaff {
+            font-weight: bold;
+        }
+        #vpiano::before {
+            content: url("vpiano.png");
+        }
+        #mainimage {
+            padding-top: 25px;
+            padding-left: 15px;
+        }
+        *, *::before, *::after {
+  box-sizing: border-box;
+}
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  float: right;
+}
+</style>
