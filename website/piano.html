@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Virtual Piano</title>
+</head>
+    <div class="navbardiv">
+    <img src="keyboard_notes.png" alt="piano" width="150px" id="mainimage">
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" id="vpiano" href="piano.html"> Virtual Piano</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="vstaff" href="staff.html">Virtual Staff</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="harmony" href="harmony.html">Harmony</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="mhistory" href="quiz.html">Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pnotation" href="pitch.html">Pitch & Notation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="about" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="settings">Settings</button> 
+                </li>
+            </ul>
+        </div>
+        <div class="pianodiv">
+            <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>Piano</title>
+</head>
+<body>
+<div class="pianoTitle"><h1>Virtual Piano</h1></div>
+<hr>
+  <div class="piano">
+    <div data-note="C" class="key white C 1"></div>
+    <div data-note="Db" class="key black Db 2"></div>
+    <div data-note="D" class="key white D 3"></div>
+    <div data-note="Eb" class="key black Eb 4"></div>
+    <div data-note="E" class="key white E 5"></div>
+    <div data-note="F" class="key white F 6"></div>
+    <div data-note="Gb" class="key black Gb 7"></div>
+    <div data-note="G" class="key white G 8"></div>
+    <div data-note="Ab" class="key black Ab 9"></div>
+    <div data-note="A" class="key white A 10"></div>
+    <div data-note="Bb" class="key black Bb 11"></div>
+    <div data-note="B" class="key white B 12"></div>
+    <h1 id="explanation" class='explanation'>NONE</h1>
+  </div>
+  <audio id="C" src="notes/C.mp3"></audio>
+  <audio id="Db" src="notes/Db.mp3"></audio>
+  <audio id="D" src="notes/D.mp3"></audio>
+  <audio id="Eb" src="notes/Eb.mp3"></audio>
+  <audio id="E" src="notes/E.mp3"></audio>
+  <audio id="F" src="notes/F.mp3"></audio>
+  <audio id="Gb" src="notes/Gb.mp3"></audio>
+  <audio id="G" src="notes/G.mp3"></audio>
+  <audio id="Ab" src="notes/Ab.mp3"></audio>
+  <audio id="A" src="notes/A.mp3"></audio>
+  <audio id="Bb" src="notes/Bb.mp3"></audio>
+  <audio id="B" src="notes/B.mp3"></audio>
+<button onclick="displayChord(), displayIntervals(), displayExplanation()" class="button">Run</button>
+<h1 class="chordName pianoTitle">Chord:</h1>
+<h1 class="intervalName pianoTitle" style="color: #333;">Intervals: </h1>
+        </div>
+    </nav>
+
+    <div id="settingsPanel" class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Settings</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">File input</label>
+                                    <input type="file" id="exampleInputFile">
+                                    <p class="help-block">Example block-level help text here.</p>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+
+                                        <input type="checkbox"> Check me out
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">File input</label>
+    <style>
+        /* Style divs with class pianodiv and navbardiv in a grid next to eachother */
+        .pianoTitle {
+            text-align: left;
+            font-size: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #003366;
+        }
+        .pianodiv {
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px;
+            padding: 10px;
+            padding-left: 50px;
+        }
+        .navbardiv {
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px;
+            padding-right: 10px;
+            width: 200px;
+            height: 300px;
+        }
+        .nav-item {
+            list-style-type: none;
+        }
+        #settingsPanel {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #f1f1f1;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            display: none;
+        }
+        /* Remove the indent from the list elements */
+        .nav-item .navbar-nav{
+            margin-left: 0;
+            padding-left: 0;
+        }
+        /* Got rid of unecessary UL indents */
+        ul {
+            padding: 0;
+            list-style-type: none; 
+        }
+        /* Here I increase the vertical padding between nav-link elements */
+        .nav-item .nav-link {
+            padding: .5rem 1rem;
+            text-decoration: none;
+            display: block;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .nav-link {
+            color: black;
+        }
+        .nav-link:hover {
+            color: #ffc107;
+        }
+        #settings::before {
+            content: url("settings.png");
+        }
+        #settings {
+            /* remove button background */
+            background-color: transparent;
+            border: transparent;
+        }
+        #about::before {
+            content: url("about.png");
+        }
+        #pnotation::before {
+            content: url("pitch.jpg");
+        }
+        #mhistory::before {
+            content: url("mhistory.png");
+        }
+        #harmony::before {
+            content: url("harmony.png");
+        }
+        #vstaff::before {
+            content: url("hi.png");
+        }
+        #vpiano::before {
+            content: url("vpiano.png");
+        }
+        #mainimage {
+            padding-top: 25px;
+            padding-left: 15px;
+        }
+        *, *::before, *::after {
+  box-sizing: border-box;
+}
+        #vpiano {
+            font-weight: bold;
+        }
+.piano {
+  display: flex;
+}
+
+.key {
+  height: calc(var(--width) * 4);
+  width: var(--width);
+  cursor: pointer;
+}
+/* On hover, keys should change colour */
+.key:hover {
+  background-color: gray;
+}
+
+.white {
+  --width: 50px;
+  background-color: white;
+  border: 1px solid #333;
+}
+
+.white.active {
+  background-color: #CCC;
+}
+
+.black {
+  --width: 30px;
+  background-color: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  z-index: 2;
+}
+
+.black.active {
+  background-color: #333;
+}
+#explanation {
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: black;
+  float: right;
+  padding-left: 10px;
+  max-width: 300px;
+}
+.button {
+    background-color: #ffc107;
+    border: none;
+    color: white;
+    padding: 10px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: orange;
+}
+    </style>
+    <script type="text/javascript">
+        // Hide the div with id "settingsPanel"
+        document.getElementById("settingsPanel").style.display = "none";
+        // Add the onclick event to each nav-link
+        document.getElementById("vpiano").onclick = function() {
+            window.location.href = "piano.html";
+        };
+        document.getElementById("vstaff").onclick = function() {
+            window.location.href = "staff.html";
+        };
+        document.getElementById("harmony").onclick = function() {
+            window.location.href = "harmony.html";
+        };
+        document.getElementById("mhistory").onclick = function() {
+            window.location.href = "musicHistory.html";
+        };
+        document.getElementById("pnotation").onclick = function() {
+            window.location.href = "pitch.html";
+        };
+        document.getElementById("about").onclick = function() {
+            window.location.href = "about.html";
+        };
+        document.getElementById("settings").onclick = function() {
+            window.location.href = "settings.html";
+        };
+        function changeImage() {
+            // Get the image element
+            var image = document.getElementById("mainimage");
+            // Change the image source
+            image.src = "https://imgs.classicfm.com/images/218395?crop=16_9&width=660&relax=1&signature=q7SbbezAL_Tgo3vNAh8Ef7mm1oU=";
+        }
+        // When the user clicks on the nav element with ID "settings", the below code unhides the div with ID "settingsPanel"
+        document.getElementById("settings").onclick = function() {
+            // Get the element with id "settingsPanel"
+            document.getElementById("settingsPanel").style.display = "block";
+        };
+        const WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+        // Allows for input from the following keys for the piano.
+        const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j']
+
+        const keys = document.querySelectorAll('.key')
+        // Add the onclick event to each key
+        const whiteKeys = document.querySelectorAll('.key.white')
+        // QuerySelectorAll returns a NodeList, which is an array-like object.
+        const blackKeys = document.querySelectorAll('.key.black')
+
+        keys.forEach(key => {
+        key.addEventListener('click', () => playNote(key))
+        // listen for a click event on each key. Call playNote() when the user clicks on a key.
+        })
+
+        document.addEventListener('keydown', e => {
+        // listen for a keydown event. Call playNote() when the user presses a key.
+        if (e.repeat) return
+        // e is an event object. If the key is being held down, don't play the note.
+        // e is used for the keycode of the key that was pressed.
+        const key = e.key
+        const whiteKeyIndex = WHITE_KEYS.indexOf(key)
+        // If the key is a white key, play the corresponding note.
+        const blackKeyIndex = BLACK_KEYS.indexOf(key) 
+        // If the key is a black key, play the corresponding note.
+
+        if (whiteKeyIndex > -1) playNote(whiteKeys[whiteKeyIndex])
+        if (blackKeyIndex > -1) playNote(blackKeys[blackKeyIndex])
+        // These checks are necessary because the indexOf() method returns -1 if the element is not found.
+        })
+        function playNote(key) {
+        // Get the note from the key's class name.
+        const noteAudio = document.getElementById(key.dataset.note)
+        // Get the audio element with the corresponding id. 
+        noteAudio.currentTime = 0
+        // Reset the audio element's current time to 0. This is necessary because the audio element will continue to play if the user presses the key multiple times.
+        noteAudio.play()
+        // Play the audio element.
+        console.log(key.classList)
+        if(key.classList.contains('active')){
+            key.classList.remove('active')
+        } else {
+            key.classList.add('active')
+        }
+        // Check if it is currently active, if so unpress the key upon
+    }
+    // Below functions finds which keys are active (the third classname), and stores them in an array activeKeys.
+    function findActiveKeys() {
+        const activeKeys = []
+        keys.forEach(key => {
+            if (key.classList.contains('active')) {
+                activeKeys.push(key.classList[2])
+            }
+        })
+        return activeKeys
+    }
+    function findActiveKeysNumbers() {
+        const activeKeys = []
+        keys.forEach(key => {
+            if (key.classList.contains('active')) {
+                activeKeys.push(key.classList[3])
+            }
+        })
+        return activeKeys
+    }
+    // Using the array returned from findActiveKeysNumbers, the below function finds the distance between each of the notes.
+    function findIntervals() {
+        const activeKeys = findActiveKeysNumbers()
+        const intervals = []
+        for (let i = 0; i < activeKeys.length - 1; i++) {
+            intervals.push(activeKeys[i + 1] - activeKeys[i])
+        }
+        return intervals
+    }
+    // The below function labels the intervals with the corresponding name. 1 is minor second, 2 is major second, etc.
+    function labelIntervals() {
+        const intervals = findIntervals()
+        const labels = []
+        intervals.forEach(interval => {
+            if (interval === 1) {
+                labels.push(' Minor Second')
+            } else if (interval === 2) {
+                labels.push(' Major Second')
+            } else if (interval === 3) {
+                labels.push(' Minor Third')
+            } else if (interval === 4) {
+                labels.push(' Major Third')
+            } else if (interval === 5) {
+                labels.push(' Perfect Fourth')
+            } else if (interval === 6) {
+                labels.push(' Augmented Fourth')
+            } else if (interval === 7) {
+                labels.push(' Perfect Fifth')
+            } else if (interval === 8) {
+                labels.push(' Minor Sixth')
+            } else if (interval === 9) {
+                labels.push(' Major Sixth')
+            } else if (interval === 10) {
+                labels.push(' Minor Seventh')
+            } else if (interval === 11) {
+                labels.push(' Major Seventh')
+            } else if (interval === 12) {
+                labels.push(' Perfect Octave')
+            }
+            else {
+                labels.push('No Intervals')
+            }
+        })
+        return labels
+    }
+    function identifyChord() {
+        const intervals = findIntervals()
+        // I put the four note chords first, because otherwise the three note chords would be identified instead.
+        // if they include intervals 4 on the 0th index, 3 on the 1st index, and 5 on the 2nd index, it is a major seventh.
+        if (intervals[0] === 4 && intervals[1] === 3 && intervals[2] === 4) {
+            return 'Major Seventh'
+        }
+        // Else if they include intervals 3 on the 0th index, 4 on the 1st index, and 5 on the 2nd index, it is a minor seventh.
+        else if (intervals[0] === 3 && intervals[1] === 4 && intervals[2] === 3) {
+            return 'Minor Seventh'
+        }
+        // Else if they include intervals 4 on the 0th index, 3 on the 1st index, and 4 on the 2nd index, it is a dominant seventh.
+        else if (intervals[0] === 4 && intervals[1] === 3 && intervals[2] === 3) {
+            return 'Dominant Seventh'
+        } // Else if they include intervals 3 on the 0th index, 4 on the 1st index, and 6 on the 2nd index, it is an augmented triad.
+        else if (intervals[0] === 3 && intervals[1] === 4 && intervals[2] === 6) {
+            return 'Augmented Triad'
+        } // Else if they include intervals 3 on the 0th index, 4 on the 1st index, and 6 on the 2nd index, it is a diminished triad.
+        else if (intervals[0] === 3 && intervals[1] === 4 && intervals[2] === 6) {
+            return 'Diminished Triad'
+        } // Else if they include intervals 3 on the 0th index, 4 on the 1st index, and 6 on the 2nd index, it is a diminished seventh.
+        else if (intervals[0] === 3 && intervals[1] === 3 && intervals[2] === 3) {
+            return 'Diminished Seventh'
+        } // else if they include intervals 3 on the 0th index, 4 on the 1st index, and 6 on the 2nd index, it is a half-diminished seventh.
+        else if (intervals[0] === 3 && intervals[1] === 4 && intervals[2] === 6) {
+            return 'Half-diminished Seventh'
+        } // Else if they include intervals 3 on the 0th index, 4 on the 1st index, and 6 on the 2nd index, it is an augmented seventh.
+        else if (intervals[0] === 3 && intervals[1] === 4 && intervals[2] === 6) {
+            return 'Augmented Seventh'
+        } // Else if they include intervals 2 on the 0th index, 4 on the 1st index, and 4 on the 2nd index, it is a suspended second.
+        else if (intervals[0] === 2 && intervals[1] === 5) {
+            return 'Suspended Second'
+        }
+        else if (intervals[0] === 4 && intervals[1] === 3) {
+            return 'Major Triad'
+        }
+        else if (intervals[0] === 3 && intervals[1] === 4) {
+            return 'Minor Triad'
+        }
+        else 
+        {
+            return 'No Chord'
+        }
+    }
+    // Display the chord name on the screen
+    function displayChord() {
+        const chordName = document.querySelector('.chordName')
+        chordName.innerHTML = "Chord: " + identifyChord()
+    }
+    function displayIntervals() {
+        const intervalName = document.querySelector('.intervalName')
+        intervalName.innerHTML = "Intervals:" + labelIntervals()
+    }
+    // Adds an explanation of the chord to the h1 with id explanation
+    function displayExplanation() {
+        const explanation = document.querySelector('.explanation')
+        explanation.innerHTML = // Based on the returned chord from identifyChord(), this uses that as a key to the dictionary, and print the explanation.
+            chordExplanations[identifyChord()]
+    }
+    const chordExplanations = {
+        'Major Triad': 'A major triad is a chord that contains three notes, each of which is a major third above the root. It is the most common chord in Western music.',
+        'Minor Triad': 'A minor triad is a chord that contains three notes, each of which is a minor third above the root. It is the most common chord in Western music.',
+        'Dominant Seventh': 'A dominant seventh is a chord that contains three notes, each of which is a major third above the root, and one of which is a major seventh above the root. It is the most common chord in Western music.',
+        'Major Seventh': 'A major seventh is a chord that contains three notes, each of which is a major third above the root, and one of which is a major seventh above the root. It is the most common chord in Western music.',
+        'Minor Seventh': 'A minor seventh is a chord that contains three notes, each of which is a minor third above the root, and one of which is a minor seventh above the root. It is the most common chord in Western music.',
+        'Diminished Triad': 'A diminished triad is a chord that contains three notes, each of which is a minor third above the root, and one of which is a diminished fifth above the root. It is the most common chord in Western music.',
+        'Diminished Seventh': 'A diminished seventh is a chord that contains three notes, each of which is a minor third above the root, and one of which is a diminished fifth above the root. It is the most common chord in Western music.',
+        'Augmented Triad': 'An augmented triad is a chord that contains three notes, each of which is a minor third above the root, and one of which is an augmented fifth above the root. It is the most common chord in Western music.',
+        'Augmented Seventh': 'An augmented seventh is a chord that contains three notes, each of which is a minor third above the root, and one of which is an augmented fifth above the root. It is the most common chord in Western music.',
+        'Suspended Second': 'A suspended second is a chord that contains three notes, each of which is a minor third above the root, and one of which is a suspended fourth above the root. It is the most common chord in Western music.',
+        'Suspended Fourth': 'A suspended fourth is a chord that contains three notes, each of which is a minor third above the root, and one of which is a suspended fourth above the root. It is the most common chord in Western music.',
+        'No Chord': 'No chord was detected. Please try again.'
+    }
+    </script>
+</body>
+</html>
